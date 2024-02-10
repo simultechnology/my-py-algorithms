@@ -17,4 +17,8 @@ def test_binary_search_not_found():
 
 
 def test_binary_search_empty_array():
-    assert binary_search([], 1) is None
+    arr = []
+    item = 5
+
+    with pytest.raises(ValueError):
+        binary_search(arr, item)

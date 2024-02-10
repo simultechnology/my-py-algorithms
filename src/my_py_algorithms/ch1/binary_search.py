@@ -1,4 +1,6 @@
 def binary_search(arr, item):
+    if not arr:
+        raise ValueError("The array is empty")
     low = 0
     high = len(arr) - 1
 
