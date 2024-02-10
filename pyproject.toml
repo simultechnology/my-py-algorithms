@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "my_py_algorithms", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 pytest = "^8.0.0"
 
 
