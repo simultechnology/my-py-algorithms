@@ -1,19 +1,19 @@
 def find_smallest(arr):
-    min_index = None
-    min_value = None
-    for i in range(len(arr)):
-        if min_value is None or arr[i] < min_value:
+    min_index = 0
+    min_value = arr[min_index]
+    for i in range(1, len(arr)):
+        if arr[i] < min_value:
             min_index = i
             min_value = arr[i]
-
     return min_index
 
 
 def selection_sort(arr):
     new_arr = []
-    while len(arr) > 0:
-        smallest_index = find_smallest(arr)
-        popped_element = arr.pop(smallest_index)
+    copied_arr = list(arr)
+    while len(copied_arr) > 0:
+        smallest_index = find_smallest(copied_arr)
+        popped_element = copied_arr.pop(smallest_index)
         new_arr.append(popped_element)
 
     return new_arr
