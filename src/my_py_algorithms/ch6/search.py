@@ -2,6 +2,8 @@ from collections import deque
 
 
 def bread_first_search(name, graph):
+    if name not in graph:
+        return False
     search_queue = deque()  # A
     search_queue += graph[name]
     searched = set()
@@ -19,17 +21,3 @@ def bread_first_search(name, graph):
 
 def person_in_seller(name):
     return name[-1] == 'm'
-
-
-graph = {}
-graph["you"] = ["alice", "bob", "claire"]
-graph["bob"] = ["anuj", "peggy"]
-graph["alice"] = ["peggy"]
-graph["claire"] = ["thom", "jonny"]
-graph["anuj"] = []
-graph["peggy"] = []
-graph["thom"] = []
-graph["jonny"] = []
-
-search = bread_first_search("you", graph)
-print(search)
